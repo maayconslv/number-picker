@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Sorteador de números</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="assets/hero-icon.svg" />
+      <strong>NUMBERS</strong>
+    </header>
+
+    <main class="hero">
+      <section class="hero-content">
+        <span class="hero-content__span">ONLINE - GRATUITO</span>
+        <h1 class="hero-content__title">SORTEADOR DE NÚMEROS</h1>
+        <div class="hero-content_how-it-works">
+          <strong>Como funciona o sorteador de números?</strong>
+          <p>
+            O sorteador utiliza um algoritmo de geração aleatória para criar
+            números dentro do intervalo especificado pelo usuário.
+          </p>
+        </div>
+        <div class="hero-content_how-it-works">
+          <strong>Posso escolher o intervalo dos números?</strong>
+
+          <p>
+            Sim, você pode definir os valores mínimo e máximo para o intervalo
+            dos números sorteados.
+          </p>
+        </div>
+      </section>
+
+      <form class="hero-form">
+        <div>
+          <strong class="hero-form__title">QUERO SORTEAR</strong>
+          <p class="hero-form__text">
+            defina o intervalo e a quantidade de números, clique em "Sortear" e
+            veja os resultados na tela. É rápido e fácil!
+          </p>
+        </div>
+
+        <div class="hero-form__input-container">
+          <div class="hero-form__number-input-wrapper">
+            <label for="" class="hero-form__input-wrapper">
+              <span class="hero-form__input-title">NÚMEROS</span>
+              <input type="text" class="hero-form__input" />
+            </label>
+  
+            <label for="" class="hero-form__input-wrapper">
+              <span class="hero-form__input-title">DE</span>
+              <input type="text" class="hero-form__input" />
+            </label>
+  
+            <label for="" class="hero-form__input-wrapper">
+              <span class="hero-form__input-title">DE</span>
+              <input type="text" class="hero-form__input" />
+            </label>
+          </div>
+
+          <label for="dont-repeat" class="hero-form__dont-repeat-wrapper">
+            <input type="checkbox" name="" id="dont-repeat">
+            <span>Não repetir número</span>
+          </label>
+        </div>
+
+        <button type="submit" class="hero-form__button">SORTEAR</button>
+      </form>
+    </main>
+  </body>
+</html>
