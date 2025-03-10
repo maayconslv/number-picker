@@ -5,6 +5,27 @@
   flex-direction: column;
 }
 
+.form-result {
+  min-width: 480px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-result__number {
+  font-size: 4.8rem;
+  font-weight: 800;
+  font-family: 'Roboto Mono', sans-serif;
+  color: var(--content-brand);
+  display: flex;
+}
+
+.form-result__number strong {
+  height: 100px;
+  width: 84px;
+  align-content: center;
+}
+
 .form-title {
   font-family: 'Roboto Flex', sans-serif;
   font-size: 2rem;
@@ -121,6 +142,7 @@
   background-color: var(--background-tertiary);
   padding: 16px;
   display: flex;
+  width: 100%;
   gap: 8px;
   align-items: center;
   justify-content: center;
