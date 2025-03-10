@@ -1,0 +1,45 @@
+.main-container {
+  width: 80%;
+  display: flex;
+  margin: 90px auto 0;
+  align-items: center;
+  gap: 108px;
+}
+
+.hero-content__span {
+  background: var(--gradient-content);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+}
+
+.hero-content__title {
+  font-family: 'Sora', sans-serif;
+  font-size: 7.8rem;
+  font-weight: 800;
+  line-height: 130%;
+  margin-top: 12px;
+}
+
+.hero-content__wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.hero-content_how-it-works {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 500;
+}
+
+.hero-content_how-it-works strong {
+  font-size: 1.4rem;
+  color: var(--content-brand);
+}
+
+.hero-content_how-it-works p {
+  font-size: 1.2rem;
+  color: var(--content-secondary);
+}
