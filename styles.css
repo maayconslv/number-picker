@@ -153,18 +153,6 @@ body {
   display: inline-block;
 }
 
-.border-wrapper::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  z-index: -1;
-  border-radius: 8px;
-  background: var(--gradient-border);
-
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out;
-}
-
 .border-wrapper:hover::before {
   opacity: 1;
 }
@@ -217,7 +205,7 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
-.hero-form__button::before {
+.hero-form__button::before, .border-wrapper::before {
   content: '';
   position: absolute;
   inset: -1px;
