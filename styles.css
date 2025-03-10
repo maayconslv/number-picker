@@ -148,11 +148,33 @@ body {
   color: var(--content-secondary);
 }
 
+.border-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.border-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: 8px;
+  background: var(--gradient-border);
+
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.border-wrapper:hover::before {
+  opacity: 1;
+}
+
 .hero-form__input {
   background-color: var(--background-secondary);
   border-radius: 8px;
   padding: 8px;
   color: var(--content-primary);
+  width: 100%;
 
   font-size: 3.2rem;
   font-family: 'Sora', sans-serif;
@@ -161,6 +183,7 @@ body {
   text-align: center;
 
   border: none;
+  position: relative;
 }
 
 .hero-form__dont-repeat-wrapper {
@@ -182,10 +205,34 @@ body {
   border-radius: 8px;
   border: none;
 
-
   font-family: 'Roboto Flex', sans-serif;
   font-weight: 600;
   line-height: 150%;
   color: var(--content-primary);
   font-size: 1.6rem;
+
+  position: relative;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-form__button::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: 8px;
+  background: var(--gradient-border);
+
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.hero-form__button:hover::before, .hero-form__input:hover::before  {
+  opacity: 1;
+}
+
+.hero-form__button:hover {
+  background-color: var(--background-secondary);
 }
