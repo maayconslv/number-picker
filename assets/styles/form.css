@@ -180,3 +180,14 @@
 .hero-form__button:hover {
   background-color: var(--background-secondary);
 }
+
+.form-error__message {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: #db4e4e;
+}
+
+.hide__error-message {
+  opacity: 0;
+}

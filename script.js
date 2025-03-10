@@ -2,6 +2,7 @@ const totalNumbers = document.querySelector('#numbers');
 const minRange = document.querySelector('#of');
 const maxRange = document.querySelector('#until');
 const repeatNumber = document.querySelector('#no-repeat');
+const errorMessage = document.querySelector('.form-error__message');
 const form = document.querySelector('form');
 
 totalNumbers.oninput = () => {
@@ -22,28 +23,31 @@ maxRange.oninput = () => {
 form.onsubmit = (event) => {
   event.preventDefault();
 
-  const result = generateRandomNumbers({
-    minRange: minRange.value,
-    maxRange: maxRange.value,
-    repeatNumber: repeatNumber.checked,
-    numbersToPick: totalNumbers.value
-  });
-
-  console.log('result', result);
+  try {
+    const result = generateRandomNumbers({
+      minRange: Number(minRange.value),
+      maxRange: Number(maxRange.value),
+      repeatNumber: repeatNumber.checked,
+      numbersToPick: totalNumbers.value
+    });
+    console.log('result', result);
+  } catch (error) {
+    printErrorMessage(error.message);
+  }
 }
 
 function generateRandomNumbers({ minRange, maxRange, repeatNumber, numbersToPick }) {
   if(!minRange || !maxRange || !numbersToPick) {
-    alert('Please fill all the fields');
+    throw new Error('Você precisa preencher todos os campos.');
   }
 
   if(minRange > maxRange) {
-    alert('The minimum range must be less than the maximum range');
+    throw new Error('O valor mínimo não pode ser maior que o valor máximo.');
   }
 
   const numbersToPickLength = (maxRange - minRange) + 1;
   let numbersToPickArray = Array.from({ length: numbersToPickLength }, (_, i) => i + Number(minRange));
-  const result = [];
+  let result = [];
 
   if (repeatNumber) {
     for (let i = 0; i < numbersToPick; i++) {
@@ -59,5 +63,11 @@ function generateRandomNumbers({ minRange, maxRange, repeatNumber, numbersToPick
     result.push(numbersToPickArray[Math.floor(Math.random() * numbersToPickLength)]);
   }
 
+  errorMessage.classList.add('hide__error-message');
   return result;
+}
+
+function printErrorMessage(message) {
+  errorMessage.textContent = message;
+  errorMessage.classList.remove('hide__error-message');
 }
