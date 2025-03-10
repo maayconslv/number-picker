@@ -1,6 +1,7 @@
 const totalNumbers = document.querySelector('#numbers');
 const minRange = document.querySelector('#of');
 const maxRange = document.querySelector('#until');
+const repeatNumber = document.querySelector('#no-repeat');
 const form = document.querySelector('form');
 
 totalNumbers.oninput = () => {
@@ -21,13 +22,42 @@ maxRange.oninput = () => {
 form.onsubmit = (event) => {
   event.preventDefault();
 
-  const result = generateRandomNumber(minRange.value, maxRange.value);
-  console.log('resultado: ',result);
+  const result = generateRandomNumbers({
+    minRange: minRange.value,
+    maxRange: maxRange.value,
+    repeatNumber: repeatNumber.checked,
+    numbersToPick: totalNumbers.value
+  });
+
+  console.log('result', result);
 }
 
-function generateRandomNumber(minRange, maxRange) {
-  const length = (maxRange - minRange) + 1;
-  const array = Array.from({ length }, (_, i) => i + Number(minRange));
+function generateRandomNumbers({ minRange, maxRange, repeatNumber, numbersToPick }) {
+  if(!minRange || !maxRange || !numbersToPick) {
+    alert('Please fill all the fields');
+  }
 
-  return array[Math.floor(Math.random() * length)];
+  if(minRange > maxRange) {
+    alert('The minimum range must be less than the maximum range');
+  }
+
+  const numbersToPickLength = (maxRange - minRange) + 1;
+  let numbersToPickArray = Array.from({ length: numbersToPickLength }, (_, i) => i + Number(minRange));
+  const result = [];
+
+  if (repeatNumber) {
+    for (let i = 0; i < numbersToPick; i++) {
+      const randomNumber = numbersToPickArray[Math.floor(Math.random() * numbersToPickLength)];
+      numbersToPickArray = numbersToPickArray.filter((number) => number !== randomNumber);
+      result.push(randomNumber);
+    }
+  
+    return result;
+  }
+
+  for (let i = 0; i < numbersToPick; i++) {
+    result.push(numbersToPickArray[Math.floor(Math.random() * numbersToPickLength)]);
+  }
+
+  return result;
 }
