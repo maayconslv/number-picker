@@ -71,3 +71,7 @@ function printErrorMessage(message) {
   errorMessage.textContent = message;
   errorMessage.classList.remove('hide__error-message');
 }
+
+function renderResult(result) {
+  
+}
