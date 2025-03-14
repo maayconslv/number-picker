@@ -8,119 +8,116 @@
 
     <title>Sorteador de números</title>
   </head>
-  <body>
+  <body>           
     <header class="header">
       <img src="assets/images/hero-icon.svg" />
       <strong class="header-title">NUMBERS</strong>
     </header>
 
     <main class="main-container">
-      <section>
-        <span class="hero-content__span">ONLINE - GRATUITO</span>
-        <h1 class="hero-content__title">SORTEADOR DE NÚMEROS</h1>
-
-        <div class="hero-content__wrapper">
-          <img src="assets/icons/talk.svg" alt="" />
-
-          <div class="hero-content_how-it-works">
-            <strong>Como funciona o sorteador de números?</strong>
-            <p>
-              O sorteador utiliza um algoritmo de geração aleatória para criar
-              números dentro do intervalo especificado pelo usuário.
+      <div>
+        <section>
+          <span class="hero-content__span">ONLINE - GRATUITO</span>
+          <h1 class="hero-content__title">SORTEADOR DE NÚMEROS</h1>
+  
+          <div class="hero-content__wrapper">
+            <img src="assets/icons/talk.svg" alt="" />
+  
+            <div class="hero-content_how-it-works">
+              <strong>Como funciona o sorteador de números?</strong>
+              <p>
+                O sorteador utiliza um algoritmo de geração aleatória para criar
+                números dentro do intervalo especificado pelo usuário.
+              </p>
+            </div>
+          </div>
+  
+          <div class="hero-content__wrapper">
+            <img src="assets/icons/talk.svg" alt="" />
+  
+            <div class="hero-content_how-it-works">
+              <strong>Posso escolher o intervalo dos números?</strong>
+  
+              <p>
+                Sim, você pode definir os valores mínimo e máximo para o intervalo
+                dos números sorteados.
+              </p>
+            </div>
+          </div>
+        </section>
+  
+        <form class="form">
+          <div>
+            <strong class="form-title">QUERO SORTEAR</strong>
+            <p class="form-text">
+              defina o intervalo e a quantidade de números, clique em "Sortear" e
+              veja os resultados na tela. É rápido e fácil!
             </p>
           </div>
-        </div>
-
-        <div class="hero-content__wrapper">
-          <img src="assets/icons/talk.svg" alt="" />
-
-          <div class="hero-content_how-it-works">
-            <strong>Posso escolher o intervalo dos números?</strong>
-
-            <p>
-              Sim, você pode definir os valores mínimo e máximo para o intervalo
-              dos números sorteados.
-            </p>
+  
+          <div class="form-input__container">
+            <div class="form-input__number-wrapper-container">
+              <label for="numbers" class="form-input__wrapper">
+                <span class="form-input__title">NÚMEROS</span>
+                <div class="form-input__border">
+                  <input type="text" class="form-input" id="numbers" />
+                </div>
+              </label>
+  
+              <label for="of" class="form-input__wrapper">
+                <span class="form-input__title">DE</span>
+                <div class="form-input__border">
+                  <input type="text" class="form-input" id="of"/>
+                </div>
+              </label>
+  
+              <label for="until" class="form-input__wrapper">
+                <span class="form-input__title">DE</span>
+                <div class="form-input__border">
+                  <input type="text" class="form-input" id="until"/>
+                </div>
+              </label>
+            </div>
+  
+            <div class="no-repeat__container">
+              <input type="checkbox" name="" id="no-repeat" class="dont-repeat" />
+              <label for="no-repeat" class="hero-form__dont-repeat-wrapper"></label>
+  
+              <span>Não repetir número</span>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <form class="form form-result">
-        <!-- <div>
-          <strong class="form-title">QUERO SORTEAR</strong>
-          <p class="form-text">
-            defina o intervalo e a quantidade de números, clique em "Sortear" e
-            veja os resultados na tela. É rápido e fácil!
-          </p>
-        </div> -->
-
-        <!-- <div class="form-input__container">
-          <div class="form-input__number-wrapper-container">
-            <label for="numbers" class="form-input__wrapper">
-              <span class="form-input__title">NÚMEROS</span>
-              <div class="form-input__border">
-                <input type="text" class="form-input" id="numbers" />
-              </div>
-            </label>
-
-            <label for="of" class="form-input__wrapper">
-              <span class="form-input__title">DE</span>
-              <div class="form-input__border">
-                <input type="text" class="form-input" id="of"/>
-              </div>
-            </label>
-
-            <label for="until" class="form-input__wrapper">
-              <span class="form-input__title">DE</span>
-              <div class="form-input__border">
-                <input type="text" class="form-input" id="until"/>
-              </div>
-            </label>
+  
+          <div class="form-button__container">
+            <button type="submit" class="hero-form__button">
+              SORTEAR
+              <img src="assets/icons/continue.svg" alt="" />
+            </button>
+            <span class="form-error__message hide__error-message">mensagem de erro</span>
           </div>
+        </form>
 
-          <div class="no-repeat__container">
-            <input type="checkbox" name="" id="no-repeat" class="dont-repeat" />
-            <label for="no-repeat" class="hero-form__dont-repeat-wrapper"></label>
-
-            <span>Não repetir número</span>
+        <section class="form-result hide">
+          <div>
+            <strong class="form-title">RESULTADO DO SORTEIO</strong>
+            <p class="form-text form-result__quantity">1 RESULTADO</p>
           </div>
-        </div> -->
-
-        <!-- // TODO: renderização para o resultado do sorteio -->
-
-        <div>
-          <strong class="form-title">RESULTADO DO SORTEIO</strong>
-          <p class="form-text">1 RESULTADO</p>
-        </div>
-
-        <div class="form-result__number">
-          <strong>23</strong>
-          <strong>12</strong>
-          <strong>23</strong>
-          <strong>12</strong>
-          <strong>23</strong>
-          <strong>23</strong>
-          <strong>12</strong>
-          <strong>23</strong>
-          <strong>12</strong>
-          <strong>23</strong>
-          <strong>12</strong>
-          <strong>23</strong>
-          <strong>23</strong>
-          <strong>12</strong>
-          <strong>23</strong>
-          <strong>12</strong>
-          <strong>23</strong>
-        </div>
-        
-        <div class="form-button__container">
-          <button type="submit" class="hero-form__button">
-            SORTEAR NOVAMENTE
-            <img src="assets/icons/continue.svg" alt="" />
-          </button>
-          <span class="form-error__message hide__error-message">mensagem de erro</span>
-        </div>
-      </form>
+  
+          <div class="form-result__number">
+            <strong>23</strong>
+            <strong>12</strong>
+            <strong>23</strong>
+            <strong>12</strong>
+          </div>
+          
+          <div class="form-button__container">
+            <button class="hero-form__button">
+              SORTEAR NOVAMENTE
+              <img src="assets/icons/play.svg" alt="" />
+            </button>
+            <span class="form-error__message hide__error-message">mensagem de erro</span>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script src="script.js"></script>

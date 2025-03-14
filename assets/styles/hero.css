@@ -1,9 +1,20 @@
 .main-container {
-  width: 80%;
+  /* width: 80%;
   display: flex;
   margin: 90px auto 0;
   align-items: center;
+  gap: 108px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 120px);
+}
+
+.main-container > div {
+  display: flex;
+  align-items: center;
   gap: 108px;
+  width: 80%;
 }
 
 .hero-content__span {
