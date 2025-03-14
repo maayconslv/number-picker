@@ -3,7 +3,10 @@ const minRange = document.querySelector('#of');
 const maxRange = document.querySelector('#until');
 const repeatNumber = document.querySelector('#no-repeat');
 const errorMessage = document.querySelector('.form-error__message');
-const form = document.querySelector('form');
+const form = document.querySelector('.form');
+const formResult = document.querySelector('.form-result');
+const formResultNumberWrapper = document.querySelector('.form-result__number-wrapper');
+
 
 totalNumbers.oninput = () => {
   let value = totalNumbers.value.replace(/\D/g, '');
@@ -31,17 +34,19 @@ form.onsubmit = (event) => {
       numbersToPick: totalNumbers.value
     });
     console.log('result', result);
+
+    renderResult(result);
   } catch (error) {
     printErrorMessage(error.message);
   }
 }
 
 function generateRandomNumbers({ minRange, maxRange, repeatNumber, numbersToPick }) {
-  if(!minRange || !maxRange || !numbersToPick) {
+  if (!minRange || !maxRange || !numbersToPick) {
     throw new Error('Você precisa preencher todos os campos.');
   }
 
-  if(minRange > maxRange) {
+  if (minRange > maxRange) {
     throw new Error('O valor mínimo não pode ser maior que o valor máximo.');
   }
 
@@ -55,7 +60,7 @@ function generateRandomNumbers({ minRange, maxRange, repeatNumber, numbersToPick
       numbersToPickArray = numbersToPickArray.filter((number) => number !== randomNumber);
       result.push(randomNumber);
     }
-  
+
     return result;
   }
 
@@ -73,5 +78,19 @@ function printErrorMessage(message) {
 }
 
 function renderResult(result) {
-  
+  form.classList.add('hide');
+  formResult.classList.remove('hide');
+
+
+  result.forEach((number, index) => {
+    const numberResult = document.createElement('strong');
+    numberResult.classList.add('form-result__number');
+    numberResult.textContent = String(number);
+
+    formResultNumberWrapper.appendChild(numberResult);
+
+    setTimeout(() => {
+      numberResult.classList.add('show');
+    }, index * 500);
+  })
 }

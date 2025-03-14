@@ -18,19 +18,28 @@
   gap: 40px;
 }
 
-.form-result__number {
+.form-result__number-wrapper {
   font-size: 4.8rem;
   font-weight: 800;
   font-family: 'Roboto Mono', sans-serif;
   color: var(--content-brand);
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.form-result__number strong {
+.form-result__number {
   height: 100px;
-  width: 84px;
   align-content: center;
+  margin-right: 34px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.form-result__number.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .form-title {
