@@ -33,7 +33,23 @@ form.onsubmit = (event) => {
       repeatNumber: repeatNumber.checked,
       numbersToPick: totalNumbers.value
     });
-    console.log('result', result);
+
+    renderResult(result);
+  } catch (error) {
+    printErrorMessage(error.message);
+  }
+}
+
+function drawAgain() {
+  formResultNumberWrapper.innerHTML = ''
+
+  try {
+    const result = generateRandomNumbers({
+      minRange: Number(minRange.value),
+      maxRange: Number(maxRange.value),
+      repeatNumber: repeatNumber.checked,
+      numbersToPick: totalNumbers.value
+    });
 
     renderResult(result);
   } catch (error) {
