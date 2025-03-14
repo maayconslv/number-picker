@@ -6,6 +6,8 @@ const errorMessage = document.querySelector('.form-error__message');
 const form = document.querySelector('.form');
 const formResult = document.querySelector('.form-result');
 const formResultNumberWrapper = document.querySelector('.form-result__number-wrapper');
+const formResultQuantity = document.querySelector('.form-result__quantity');
+let resultQuantity = 0;
 
 
 totalNumbers.oninput = () => {
@@ -34,6 +36,7 @@ form.onsubmit = (event) => {
       numbersToPick: totalNumbers.value
     });
 
+    resultQuantity++;
     renderResult(result);
   } catch (error) {
     printErrorMessage(error.message);
@@ -51,6 +54,7 @@ function drawAgain() {
       numbersToPick: totalNumbers.value
     });
 
+    resultQuantity++;
     renderResult(result);
   } catch (error) {
     printErrorMessage(error.message);
@@ -108,5 +112,6 @@ function renderResult(result) {
     setTimeout(() => {
       numberResult.classList.add('show');
     }, index * 500);
-  })
+  });
+  formResultQuantity.textContent = `${resultQuantity}º RESULTADO`
 }
