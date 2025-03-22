@@ -1,4 +1,4 @@
-# ![Favicon](./assets/images/hero-icon.svg) Nome do Projeto
+# ![Favicon](./assets/images/hero-icon.svg) Sorteador de números
 
 ## Sobre
 Este é um projeto desenvolvido utilizando HTML, CSS e JavaScript. O projeto se trata de um sorteador
